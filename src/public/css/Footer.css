@@ -1,0 +1,122 @@
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #97a5a9;
+}
+footer > span{
+    margin: 10px;
+    display: flex;
+    gap: 5px;
+    font-size: 8px;
+}
+
+footer > span > p{
+    font-size: 10px;
+    font-weight: 700;
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    background-color: #aab8bb;
+    margin-top: 20px;
+    gap: 40px;
+    padding: 10px;
+}
+.footer > nav{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    row-gap: 10px;
+    color: white;
+}
+.footer > nav > h5{
+    font-size: 16px;
+}
+.footer > nav > ul{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    text-align: center;
+}
+.footer > nav > ul > li{
+    list-style: none;
+    width: 140px;
+    text-align: left;
+}
+.option-footer > a{
+    text-decoration: none;
+    width: 100%;
+    color: white;
+}
+.footer > .payment{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer > .payment > h5{
+    color: white;
+    font-size: 16px;
+}
+.footer > .payment > div{
+    display: flex;
+    gap: 20px;
+}
+.footer > .payment > div > span > img{
+    width: 50px;
+}
+.footer > .payment > div > span{
+    color: white;
+}
+.contact-footer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.contact-footer > h5{
+    color: white;
+    font-size: 16px;
+}
+.contact-footer > span{
+    color: white;
+    display: flex;
+    gap: 10px;
+}
+.ig-logo-footer{
+    border: 2px solid white;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ig-logo-footer > .ig-logo-big{
+    width: 55%;
+    height: 55%;
+    border: 2px white solid;
+    border-radius: 50%;
+}
+.ig-logo-footer > .ig-logo-small{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 2px;
+    right: 3px;
+}
+.socialmedia-footer > a{
+    display: flex;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+}
+.socialmedia-footer > a > h3{
+    font-weight: 500;
+}
+.socialmedia-footer{
+    align-self: center;
+}

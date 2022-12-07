@@ -1,0 +1,105 @@
+.card-container{
+    width: calc(50% - 10px);
+    display: flex;
+    flex-direction: column;
+    border: none;
+    gap: 10px;
+}
+.card-container > .top-card{
+    height: 200px;
+    position: relative;
+}
+.top-card > .new-product{
+    position: absolute;
+    top: 5px;
+    right: 0;
+    background-color: #5E718B;
+    padding: 2px 8px;
+    color: white;
+    font-size: 14px;
+    z-index: 10;
+}
+.card-container > .bottom-card{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.bottom-card > h4{
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center;
+}
+.bottom-card > span{
+   font-weight: bolder;
+}
+.bottom-card > button{
+    width: 100%;
+    padding: 5px;
+    font-size: 10px;
+    background-color: #5E718B;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    letter-spacing: 1.5px;
+}
+.bottom-card > button:hover{
+    background-color: #3b5570;
+}
+.slider-wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.slider.animated{
+    height: 100%;
+}
+.image-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.slide.selected{
+   height: 100%;
+}
+.carousel-root{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.carousel-root > .carousel{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: flex-start;
+}
+.thumbs-wrapper.axis-vertical{
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+.control-dots{
+    z-index: 30;
+}
+
+.image-in-carousel{
+    object-fit: cover;
+}
+.card-title{
+    font-weight: 500;
+}
+
+@media (min-width: 768px) {
+    .card-container{
+        width: calc(25% - 20px);
+    }
+    .card-container > .top-card{
+        height: 300px;
+        position: relative;
+    }
+}

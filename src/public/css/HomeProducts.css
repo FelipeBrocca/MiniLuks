@@ -1,0 +1,98 @@
+.home-products-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+h2{
+    align-self: center;
+    color: rgb(59, 59, 59);
+    font-weight: 500;
+    text-align: center;
+}
+.home-products-container > div{
+    width: 100%;
+}
+.home-products-container > button{
+    padding: 10px;
+    background-color: #5E718B;
+    border: none;
+}
+.home-products-container > button > a{
+    color: white;
+}
+.categories-list{
+   width: 100%;
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   row-gap: 10px;
+}
+.categories-list > a{
+    text-decoration: none;
+    color: white;
+    background-color: #5E718B;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+.categories-list > a:hover{
+    background-color: rgb(68, 97, 129);
+}
+.products-container { 
+    display: flex;
+    justify-content: center;
+}
+.products-container > .cards-container{
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px 10px;
+}
+.categories-container > h3{
+    display: none;
+}
+
+@media (min-width: 769px) {
+    .home-products-container{
+        flex-direction: row;
+        justify-content: center;
+    }
+    .home-products-container > .categories-container{
+        width: 20%;
+        max-width: 160px;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        gap: 30px;
+    }
+    .categories-list{
+       flex-direction: column;
+    }
+    .categories-list > a{
+        color: rgb(35, 35, 35);
+        font-size: 14px;
+        background-color: inherit;
+        padding: 0;
+        text-align: left;
+    }
+    .categories-list > a:hover{
+        color: rgb(74, 74, 74);
+        font-size: 14px;
+        background-color: white;
+        padding: 0;
+    }
+    .products-container{
+        width: 40%;
+        max-width: 1000px;
+    }
+    .categories-container > h3{
+        display: block;
+        font-weight: 500;
+    }
+    .home-products-container > button{
+        display: none;
+    }
+}

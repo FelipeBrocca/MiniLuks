@@ -1,0 +1,25 @@
+.main-store{
+    margin-top: 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.nav-indicator > h4{
+   padding-left: 20px;
+   max-width: 1100px;
+}
+.nav-indicator > h4 > a{
+    text-decoration: none;
+    color: grey;
+}
+.nav-indicator > h4 > strong{
+    color: #30455c;
+}
+
+@media (min-width: 1024px) {
+    .nav-indicator > h4{
+        margin: 0 auto;
+        padding: 0;
+    }
+}
+
