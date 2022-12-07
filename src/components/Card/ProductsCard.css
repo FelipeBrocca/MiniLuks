@@ -4,7 +4,11 @@
     flex-direction: column;
     border: none;
     gap: 10px;
+    max-width: 250px;
+    position: relative;
+    min-height: 350px;
 }
+
 .card-container > .top-card{
     height: 200px;
     position: relative;
@@ -25,6 +29,10 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    padding: 5px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .bottom-card > h4{
@@ -35,18 +43,20 @@
 .bottom-card > span{
    font-weight: bolder;
 }
-.bottom-card > button{
+.bottom-card > a{
     width: 100%;
+    max-width: 120px;
     padding: 5px;
-    font-size: 10px;
+    font-size: 12px;
     background-color: #5E718B;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     letter-spacing: 1.5px;
+    text-align: center;
 }
-.bottom-card > button:hover{
+.bottom-card > a:hover{
     background-color: #3b5570;
 }
 .slider-wrapper{
@@ -59,9 +69,15 @@
 }
 .image-container{
     height: 100%;
+    max-width: 280px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+.image-container > img{
+    max-height: 200px;
 }
 .slide.selected{
    height: 100%;
@@ -77,6 +93,7 @@
     flex-direction: column;
     position: relative;
     align-items: flex-start;
+    border-radius: 0px;
 }
 .thumbs-wrapper.axis-vertical{
     margin: 0px;
@@ -89,6 +106,8 @@
 
 .image-in-carousel{
     object-fit: cover;
+    object-position: center;
+    max-width: 180px;
 }
 .card-title{
     font-weight: 500;
@@ -96,10 +115,17 @@
 
 @media (min-width: 768px) {
     .card-container{
-        width: calc(25% - 20px);
+        width: calc(35% - 20px);
+        min-height: 420px;
+        max-height: 430px;
     }
     .card-container > .top-card{
         height: 300px;
         position: relative;
+    }
+}
+@media (min-width: 1024px) {
+    .card-container{
+        width: calc(25% - 20px);
     }
 }

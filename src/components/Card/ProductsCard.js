@@ -31,7 +31,7 @@ const ProductsCard = ({images, title, price, id, category}) => {
        <div className='bottom-card'>
         <h3 className='card-title'>{title}</h3>
         <span>$ {price}</span>
-        <button>Agregar al carrito</button>
+        <Link className='image-link' to={`/productos/${category}/${id}`}>Ver producto</Link>
        </div>
     </div>
   )

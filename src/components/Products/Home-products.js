@@ -12,7 +12,7 @@ const HomeProducts = () => {
 
     return (
         <>
-            <h2>Para este verano elegí lo mejor!</h2>
+            <h2>Este verano elegí lo mejor para tu peque!</h2>
             <div className="home-products-container">
                 <div className="categories-container">
                     <h3>Categorías principales</h3>

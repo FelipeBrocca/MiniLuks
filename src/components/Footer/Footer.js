@@ -44,7 +44,7 @@ const Footer = () => {
           <div className='contact-footer'>
             <h5>CONTACTANOS</h5>
             <span><FontAwesomeIcon icon={faPhone} />2392-403148</span>
-            <span><FontAwesomeIcon icon={faAt} />miniluks@gmail.com</span>
+            <span><FontAwesomeIcon icon={faAt} />minilukskids@gmail.com</span>
           </div>
           <div className='socialmedia-footer'>
              <a href='https://www.instagram.com/mini.luks/?hl=es-la' target="_blanck">
