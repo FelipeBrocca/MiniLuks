@@ -58,7 +58,7 @@ const Footer = () => {
              </a>
           </div>
         </div>
-        <span>Design by<p>EffeBe</p></span>
+        <span>Desarrollado por<p>EffeBe</p></span>
     </footer>
   )
 }

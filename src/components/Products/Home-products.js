@@ -21,7 +21,7 @@ const HomeProducts = () => {
                         {
                             FakeApiCategories?.map((category) =>{
                                 return (
-                                  <Link className="categories-link" to={`productos/${category.name}`} key={category.name}>{category.name}</Link>
+                                  <Link className="categories-link" to={`/productos/${category.name.toLowerCase()}`} key={category.name}>{category.name}</Link>
                                 )
                             })
                         }

@@ -8,11 +8,11 @@ footer > span{
     margin: 10px;
     display: flex;
     gap: 5px;
-    font-size: 8px;
+    font-size: 11px;
 }
 
 footer > span > p{
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 700;
 }
 .footer{

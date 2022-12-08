@@ -104,4 +104,7 @@ h2{
     .products-container > .cards-container{
         justify-content: flex-end;
     }
+    .cards-container.in-category{
+        justify-content: flex-start;
+    }
 }

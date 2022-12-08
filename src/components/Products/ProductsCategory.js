@@ -1,15 +1,23 @@
-import React from 'react';
+import React from 'react'
+import { useParams } from 'react-router-dom'
 import {Link} from 'react-router-dom';
 
 import ProductsCard from "../Card/ProductsCard"
 import { FakeApiProducts } from "../../Data/FakeApiProducts";
 import { FakeApiCategories } from "../../Data/FakeApiCategories";
 
-const StoreProducts = () => {
+const ProductsCategory = () => {
+
+  const params = useParams()
+
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1)
+  }
+
   return (
-    <>
+    <main>
     <div className='nav-indicator'>
-    <h4><Link to='/'>Inicio</Link> / <strong>Productos</strong></h4>
+    <h4><Link to='/'>Inicio</Link> / <Link to='/productos'>Productos</Link> / <strong>{capitalizeFirstLetter(params.category)}</strong></h4>
     </div>
             <div className="home-products-container">
             <div className="categories-container">
@@ -26,10 +34,11 @@ const StoreProducts = () => {
                     </ul>
                 </div>
                 <div className="products-container">
-                    <div className="cards-container">
+                    <div className="cards-container in-category">
                     {
                             FakeApiProducts.map((product) => {
-                                return (
+                              return (
+                                  params.category === product.category.toLowerCase() ?
                                    <ProductsCard
                                    key={product.id}
                                    id={product.id}
@@ -38,14 +47,15 @@ const StoreProducts = () => {
                                    images={product.images}
                                    category={product.category}
                                    />
+                                   : ''
                                 )
                             })
                         }
                     </div>
                 </div>
             </div>
-        </>
+        </main>
   )
 }
 
-export default StoreProducts
+export default ProductsCategory

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
+import { FakeApiCategories } from '../../Data/FakeApiCategories';
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass, faChevronDown } from '@fortawesome/free-solid-svg-icons';
@@ -16,7 +17,7 @@ const NavHeader = () => {
              type='search'
              autoComplete='off'
              name='searchbar'
-             placeholder='Buscar'>
+             placeholder='Buscar producto'>
              </input>
              <button type='submit'>
               <FontAwesomeIcon icon={faMagnifyingGlass} className='icon icon-searchbar' />
@@ -33,18 +34,15 @@ const NavHeader = () => {
               <button
               onClick={() => setIsClosed(!isClosed)}
               ><Link to='/productos'>Todos los productos</Link></button>
-              <button
-              onClick={() => setIsClosed(!isClosed)}
-              ><Link>Verano</Link></button>
-              <button
-              onClick={() => setIsClosed(!isClosed)}
-              ><Link>Chalecos Flotadores</Link></button>
-              <button
-              onClick={() => setIsClosed(!isClosed)}
-              ><Link>Accesorios</Link></button>
-              <button
-              onClick={() => setIsClosed(!isClosed)}
-              ><Link>Piyamas</Link></button>
+             { 
+               FakeApiCategories.map((category) => {
+                 return (
+                  <button
+                  onClick={() => setIsClosed(!isClosed)}
+                  ><Link to={`/productos/${category.name.toLowerCase()}`}>{category.name}</Link></button>
+                 )
+               })
+              }
           </div>
           </div>
         </div>

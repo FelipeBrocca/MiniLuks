@@ -59,7 +59,7 @@ const MenuHeader = () => {
                 return (
                   <Link
                   onClick={handlePopUp}
-                  to={`productos/${category.name}`}
+                  to={`/productos/${category.name.toLowerCase()}`}
                   key={category.name}
                     >{category.name}</Link>
                 )

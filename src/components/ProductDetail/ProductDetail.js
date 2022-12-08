@@ -44,12 +44,15 @@ const ProductDetail = () => {
       addItemToCart(productToCart, valor)
     })
 
+    const capitalizeFirstLetter = (string) => {
+      return string.charAt(0).toUpperCase() + string.slice(1)
+    }
 
   return (
     <main className='main-detail'>
-    <h4><Link to='/'>Inicio</Link>/<strong>Productos</strong></h4>
+    <h4><Link to='/'>Inicio</Link> / <Link to='/productos'>Productos</Link> / <Link to={`/productos/${params.category}`}>{capitalizeFirstLetter(params.category)}</Link></h4>
     {
-      isLoading ? <div>Cargando...</div>
+      isLoading ? <h1>Cargando...</h1>
       : <div className='detail-container'>
         <div className='top-detail-container'>
           <Carousel
@@ -108,7 +111,7 @@ const ProductDetail = () => {
               >Agregar al carrito</button>
               <div className='category-in-detail'>
               <p>Ver categorías:</p>
-              <Link className='categories-detail-link' to={`/productos/${productToDetail.category}`}>{productToDetail.category}</Link>
+              <Link className='categories-detail-link' to={`/productos/${productToDetail.category.toLowerCase()}`}>{productToDetail.category}</Link>
               </div>
               </>
             : <div>Cargando...</div>

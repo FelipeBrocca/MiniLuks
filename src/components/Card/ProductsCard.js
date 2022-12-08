@@ -18,7 +18,7 @@ const ProductsCard = ({images, title, price, id, category}) => {
            {
              images.map((image) => {
                return(
-                    <Link className='image-link' to={`/productos/${category}/${id}`} key={image.url}>
+                    <Link className='image-link' to={`/productos/${category.toLowerCase()}/${id}`} key={image.url}>
                       <div className='image-container'>
                         <img src={image.url} alt='product' className='image-in-carousel' />
                       </div>
@@ -31,7 +31,7 @@ const ProductsCard = ({images, title, price, id, category}) => {
        <div className='bottom-card'>
         <h3 className='card-title'>{title}</h3>
         <span>$ {price}</span>
-        <Link className='image-link' to={`/productos/${category}/${id}`}>Ver producto</Link>
+        <Link className='image-link' to={`/productos/${category.toLowerCase()}/${id}`}>Ver producto</Link>
        </div>
     </div>
   )
