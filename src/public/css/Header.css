@@ -143,22 +143,6 @@ header > .top-header{
     visibility: hidden;
     transform: scaleY(0);
 }
-/* .dropdown-select > button{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    height: 40px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: inherit;
-    border: none;
-    cursor: pointer;
-    color: white;
-} */
-/* .dropdown-select > button:hover{
-    background-color: #4a5c74;
-} */
-
 .top-header > .cart-container{
     display: flex;
     gap: 2px;
@@ -419,4 +403,23 @@ header > .nav-div{
 }
 .button-whatsapp{
     cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+    header{
+        height: 180px;
+        position: relative;
+        align-self: center;
+        background-color: transparent;
+        box-shadow: 0px 0px 7px 0px rgba(165, 163, 163, 0.557);
+    }
+    header > .top-header{
+        background-color: transparent;
+    }
+    header > .top-header > .logo-a{
+       width: 140px;
+    }
+    header > .nav-div{
+        background-color: transparent;
+    }
 }
