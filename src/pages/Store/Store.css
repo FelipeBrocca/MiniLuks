@@ -3,22 +3,6 @@
     flex-direction: column;
     gap: 30px;
 }
-.nav-indicator > h4{
-    padding: 20px;
-    max-width: 800px;
-    text-align: center;
-    align-self: flex-start;
-    margin: 0px;
-}
-.nav-indicator > h4 > a{
-    text-decoration: none;
-    color: grey;
-}
-.nav-indicator > h4 > a:hover{
-    color: #30455c;
-}
-.nav-indicator > h4 > strong{
-    color: #30455c;
-}
+
 
 

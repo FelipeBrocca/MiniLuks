@@ -404,6 +404,9 @@ header > .nav-div{
 .button-whatsapp{
     cursor: pointer;
 }
+.big-screen-nav{
+    display: none;
+}
 
 @media (min-width: 1024px) {
     header{
@@ -421,5 +424,36 @@ header > .nav-div{
     }
     header > .nav-div{
         background-color: transparent;
+    }
+    .menu-container{
+        visibility: hidden;
+    }
+    .dropsidebar-menu{
+        display: none;
+    }
+    .nav-div > .search-header{
+        display: none;
+    }
+    .nav-div > .button-nav{
+        display: none;
+    }
+    .nav-div{
+        justify-content: center;
+        align-items: center;
+    }
+    .big-screen-nav{
+        display: block;
+    }
+    .big-screen-menu{
+        display: flex;
+        gap: 40px;
+    }
+    .option-bs-menu{
+        list-style: none;
+        align-self: center;
+        font-size: 16px;
+    }
+    .option-bs-menu > a{
+        color: #5E718B;
     }
 }

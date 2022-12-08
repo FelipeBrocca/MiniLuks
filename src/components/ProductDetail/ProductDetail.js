@@ -50,7 +50,9 @@ const ProductDetail = () => {
 
   return (
     <main className='main-detail'>
-    <h4><Link to='/'>Inicio</Link> / <Link to='/productos'>Productos</Link> / <Link to={`/productos/${params.category}`}>{capitalizeFirstLetter(params.category)}</Link></h4>
+      <div className='nav-indicator'>
+         <h4><Link to='/'>Inicio</Link> / <Link to='/productos'>Productos</Link> / <Link to={`/productos/${params.category}`}>{capitalizeFirstLetter(params.category)}</Link> / <strong>{productToDetail?.name}</strong></h4>
+      </div>
     {
       isLoading ? <h1>Cargando...</h1>
       : <div className='detail-container'>

@@ -1,31 +1,24 @@
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
 import { FakeApiCategories } from '../../Data/FakeApiCategories';
-import BigScreenMenu from './BigScreenMenu';
-
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
-
-const NavHeader = () => {
+const BigScreenMenu = () => {
 
     const [isClosed, setIsClosed] = useState(true);
+   
 
   return (
-    <div className='nav-div'>
-          <form className='search-header' action='/search/' method='get'>
-             <input
-             type='search'
-             autoComplete='off'
-             name='searchbar'
-             placeholder='Buscar producto'>
-             </input>
-             <button type='submit'>
-              <FontAwesomeIcon icon={faMagnifyingGlass} className='icon icon-searchbar' />
-             </button>
-          </form>
-          <div className='button-nav'>
+    <div className='big-screen-nav'>
+        <ul className='big-screen-menu'>
+        <li className='option-bs-menu'>
+            <Link
+            to='/'
+            >INICIO</Link>
+        </li>
+        <div className='button-nav'>
           <button
           onClick={() => setIsClosed(!isClosed)}
           >
@@ -48,9 +41,21 @@ const NavHeader = () => {
               }
           </div>
           </div>
-           <BigScreenMenu />
-        </div>
+          <li className='option-bs-menu'>
+            <Link
+            >CONTACTO</Link>
+        </li>
+        <li className='option-bs-menu'>
+            <Link
+            >POLÍTICA DE CAMBIO</Link>
+        </li>
+        <li className='option-bs-menu'>
+            <Link
+            >QUIÉNES SOMOS</Link>
+        </li>
+          </ul>
+</div>
   )
 }
 
-export default NavHeader;
+export default BigScreenMenu

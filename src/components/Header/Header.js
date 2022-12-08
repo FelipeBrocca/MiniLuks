@@ -46,10 +46,6 @@ const Header = () => {
           <FontAwesomeIcon className='icon' icon={faCartShopping} />
         </button>
         <span>{productsInCartLength}</span>
-        </div>
-      </div>
-      <NavHeader />
-    </header>
         <div className={`cart-display-container ${isClosed ? "closed" : ""}`}>
           <Cart
           popUpState={popUpState}
@@ -57,6 +53,10 @@ const Header = () => {
           cartItems={cartItems}
           />
         </div>
+        </div>
+      </div>
+      <NavHeader />
+    </header>
       </>
   )
 }
