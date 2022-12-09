@@ -10,7 +10,6 @@ const ProductDetail = () => {
     
     const params = useParams()
     const [productToDetail, setProductToDetail] = useState()
-    const [isLoading, setIsLoading] = useState(true)
     const [valor, setValor] = useState(1)
     const [sizeSelected, setSizeSelected] = useState('Sin especificar talle')
     const {addItemToCart} = useContext(CartContext)
@@ -19,9 +18,7 @@ const ProductDetail = () => {
 
 
     useEffect(() => {
-      setIsLoading(true)
       setProductToDetail(...productView) 
-      setIsLoading(false)
     }, [productView])
 
     const productToCart = {
@@ -54,8 +51,7 @@ const ProductDetail = () => {
          <h4><Link to='/'>Inicio</Link> / <Link to='/productos'>Productos</Link> / <Link to={`/productos/${params.category}`}>{capitalizeFirstLetter(params.category)}</Link> / <strong>{productToDetail?.name}</strong></h4>
       </div>
     {
-      isLoading ? <h1>Cargando...</h1>
-      : <div className='detail-container'>
+        <div className='detail-container'>
         <div className='top-detail-container'>
           <Carousel
           showStatus={false}
@@ -116,7 +112,7 @@ const ProductDetail = () => {
               <Link className='categories-detail-link' to={`/productos/${productToDetail.category.toLowerCase()}`}>{productToDetail.category}</Link>
               </div>
               </>
-            : <div>Cargando...</div>
+            : 'Error! Este producto no existe...'
           }
         </div>
         </div>

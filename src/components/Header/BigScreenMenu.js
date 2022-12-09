@@ -18,24 +18,31 @@ const BigScreenMenu = () => {
             to='/'
             >INICIO</Link>
         </li>
-        <div className='button-nav'>
+        <div className='button-bs-nav'>
           <button
           onClick={() => setIsClosed(!isClosed)}
+          className='option-bs-menu'
           >
-            <p>PRODUCTOS</p>
+            <p className='option-bs-menu'>PRODUCTOS</p>
             <FontAwesomeIcon icon={faChevronDown} />
           </button>
-          <div className={`dropdown-menu ${isClosed ? "closed" : ""}`}>
+          <div className={`dropdown-bs-menu ${isClosed ? "closed" : ""}`}>
               <button
               onClick={() => setIsClosed(!isClosed)}
-              ><Link to='/productos'>Todos los productos</Link></button>
+              ><Link 
+              to='/productos'
+              onClick={() => setIsClosed(!isClosed)}
+              >Todos los productos</Link></button>
              { 
                FakeApiCategories.map((category) => {
                  return (
                   <button
                   key={category.name}
                   onClick={() => setIsClosed(!isClosed)}
-                  ><Link to={`/productos/${category.name.toLowerCase()}`}>{category.name}</Link></button>
+                  ><Link 
+                  to={`/productos/${category.name.toLowerCase()}`}
+                  onClick={() => setIsClosed(!isClosed)}
+                  >{category.name}</Link></button>
                  )
                })
               }

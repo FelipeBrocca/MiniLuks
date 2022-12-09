@@ -9,6 +9,7 @@ import Home from './pages/Home/Home';
 import AllProducts from './pages/Store/AllProducts';
 import ProductDetail from './components/ProductDetail/ProductDetail';
 import ProductsCategory from './components/Products/ProductsCategory';
+import NotFound from './components/NotFound/NotFound';
 
 
 
@@ -22,11 +23,7 @@ function App() {
               <Route exact path='/productos' element={<AllProducts />} />
               <Route exact path='/productos/:category/:id' element={<ProductDetail />} />
               <Route exact path='/productos/:category' element={<ProductsCategory />} />
-              <Route exact path='*' element={
-                <main>
-                  <h2>Nada por aca</h2>
-                </main>
-              } />
+              <Route exact path='*' element={<NotFound />} />
             </Routes>
             <Footer />     
         </CartProvider>
