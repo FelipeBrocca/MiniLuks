@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import React from 'react';
+import React, {useState} from 'react';
 
 import {CartProvider} from './Context/CartContext'
 
@@ -14,8 +14,27 @@ import NotFound from './components/NotFound/NotFound';
 
 
 function App() {
+  const [loading, setLoading] =useState(true)
+  const loader = document.getElementById('Loader2')
+  const loaderImg = document.getElementById('loader-img')
+  const body = document.getElementById('body')
+
+  if(loader){
+    setTimeout(() => {
+      loader.style.opacity = "0"
+      loader.style.height = '0px'
+      loaderImg.style.height = '0px'
+      setLoading(false)
+    }, 2000)
+  }
+  if(loading){
+    body.style.overflow = 'hidden'
+  } else {
+    body.style.overflow = 'visible'
+  }
 
   return (
+    !loading && (
         <CartProvider>
         <Header />        
           <Routes>
@@ -27,6 +46,7 @@ function App() {
             </Routes>
             <Footer />     
         </CartProvider>
+    )
   );
 }
 
