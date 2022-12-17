@@ -175,6 +175,32 @@ header > .nav-div{
    gap: 0px;
    width: 50%;
    height: 90%;
+   position: relative;
+}
+.search-header > .container-searching{
+   position: absolute;
+   width: 95%;
+   max-width: 465px;
+   background-color: white;
+   top: 30px;
+   border-radius: 0px 0px 20px 0px;
+   padding-left: 10px;
+}
+.container-searching > ul{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+.item-searching{
+    list-style: none;
+    width: 100%;
+    padding: 5px 0px;
+    color: #4a5c74;
+    border-top: 1px solid rgba(215, 215, 215, 0.576);
+}
+.item-searching:hover{
+    color: #6e87a8;
 }
 .search-header > input{
     border: none;
@@ -378,6 +404,7 @@ header > .nav-div{
     background-color: transparent;
     font-size: 20px;
     cursor: pointer;
+    color: black;
 }
 .size-in-cart{
     font-size: 10px;
