@@ -18,7 +18,6 @@ const NavHeader = () => {
     const handleChangeSearchbar = e => {
       setSearch(e.target.value)
       filtrar(e.target.value)
-      console.log(e.target.value);
     } 
     const filtrar = (terminoBusqueda) => {
       let resulBusqueda = FakeApiProducts.filter((element) => {
@@ -48,9 +47,10 @@ const NavHeader = () => {
                    products.slice(0, 4).map((product) => {
                     return(
                       <Link 
+                        key={product.id}
                         onClick={() => setSearch('')}
                         to={`/productos/${product.category}/${product.id}`}>
-                      <li className='item-searching' key={product.id}>
+                      <li className='item-searching'>
                         {product.name}
                       </li>
                       </Link>
