@@ -1,6 +1,6 @@
 export const FakeApiCategories = [
     {
-        name: "Mallas niñas",
+        name: "Trajes de baño niñas",
     },
     {
         name: "Chalecos",
@@ -9,6 +9,9 @@ export const FakeApiCategories = [
         name: "Accesorios"
     },
     {
-        name: 'Mallas niños'
+        name: 'Trajes de baño niños'
+    },
+    {
+        name: 'Remeras UV'
     }
 ]

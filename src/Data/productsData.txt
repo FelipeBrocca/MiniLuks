@@ -1,0 +1,67 @@
+REMERAS UV
+Descripcion: Cubre toda la espalda y el frente. Tiene manga ranglan y el cuello es super flexible, lo que la hace fácil de poner y sacar; tiene lycra con factor UV UPF5O.
+Precio: 7000
+Rebaja: 5500
+
+CAPITAS
+Descripcion: Confeccionada en toalla estampada. Tiene capucha para abrigar aún más. Sirve de carpita para cambiarse donde sea.
+Precio: 6500
+Rebaja: 4500
+
+COLITAS
+Descripcion: NADA
+Precio: 800
+Rebaja: 600
+
+VINCHAS
+Descripcion: NADA
+Precio: 1000
+Rebaja: 800
+
+PILUSOS
+Descripcion: De un lado estampado y del otro lado liso a contratono. Toda la prenda está forrada con lycra que posee factor UV UPF5O, y aporta mayor calidad, durabilidad y resistencia.
+Precio: 3500
+
+CHALECOS
+Descripcion: Cierre de primera calidad (Marca YKK) en el delantero para su fácil colocación. Tira de seguridad para colocar en la entrepierna. Relleno de polietileno para una flotación. Por fuera de microfibra y lycra de primera calidad. 
+Precio: 10000
+Rebaja: 8500
+
+SHORT NINOS
+Descripcion: Short con red sujetadora interna, dos bolsillos delanteros y uno trasero. Con cordones con broche de bronce para evitar la oxidación. Diferentes estampados, talles desde 12-18 meses hasta 10 años.
+Precio: 4500
+Rebaja: 3990
+
+TRAJES DE BANO NINAS
+Entera NINA
+Descripcion: Esta prenda tiene unos volados en los breteles y viene con un moño en la espalda. Está confeccionada con la mejor lycra que posee factor UV UPF5O y elástico, resistente al calor y al sol. Toda la prenda está forrada con lycra que posee factor UV UPF50 y aporta mayor calidad, durabilidad y resistencia. 
+Precio: 7500
+Rebaja: 5990
+
+Entera AGUS
+Descripcion: Esta prenda tiene breteles cruzados anchos en espalda y voladitos en la cola. Tiene muy buen calce, y la cola es amplia y de lo más cómoda. Toda la prenda está forrada con lycra que posee factor UV UPF50 y aporta mayor calidad, durabilidad y resistencia.
+Precio: 7500
+Rebaja: 5990
+
+Entera LUPE
+Descripcion: Esta prenda tiene la collareta combinada en toda la malla, con volados a los costados de las caderas. Posee breteles finitos regulables, con pasadores Zamak (están hechos de un material hipo alergénico que no se calienta con el sol ni se oxidan con el agua, esto es CLAVE, así la malla dura por varias temporadas. Toda la prenda está forrada con lycra que posee factor UV UPF50 y aporta mayor calidad, durabilidad y resistencia.
+Precio: 7500
+Rebaja: 5990
+
+BOMBACHAS
+Descripcion: La cola es amplia para un mejor calce y tiene tiro medio/alto. Los volados en cadera están combinados a contratono. Toda la prenda está forrada con lycra que posee factor UV UPF5O, y aporta mayor calidad, durabilidad y resistencia.
+Precio: 4200
+Rebaja: 3000
+
+{
+        id: ,
+        name: '',
+        description: '',
+        price:,
+        offer:,
+        images: [{
+            url: ''
+        }],
+        category: '',
+        sizes: []
+    }

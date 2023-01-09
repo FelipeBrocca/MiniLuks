@@ -67,21 +67,21 @@ const MenuHeader = () => {
             }
           </div>
         </div>
-        <li className='option-sidebar'>
+        {/* <li className='option-sidebar'>
             <Link
             onClick={handlePopUp}
             >Contacto</Link>
-        </li>
+        </li> */}
         <li className='option-sidebar'>
             <Link
             onClick={handlePopUp}
             >Politica de cambio</Link>
         </li>
-        <li className='option-sidebar'>
+        {/* <li className='option-sidebar'>
             <Link
             onClick={handlePopUp}
             >Quienes somos</Link>
-        </li>
+        </li> */}
        </ul>
     </div>
     </>

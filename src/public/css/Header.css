@@ -475,20 +475,37 @@ header > .nav-div{
     }
     .big-screen-menu{
         display: flex;
+        justify-content: space-between;
         gap: 40px;
     }
-    .option-bs-menu{
+    .big-screen-menu > li{
+        width: 180px;
+        text-align: center;
         list-style: none;
         align-self: center;
         font-size: 18px;
     }
+    button.option-bs-menu{
+        list-style: none;
+        align-self: center;
+        font-size: 18px;
+        display: flex;
+        justify-content: space-around;
+        min-width: 200px;
+    }
+    .option-bs-menu{
+        color: #5E718B;
+        width: 100%;
+        font-size: 18px;
+    }
     .option-bs-menu > a{
         color: #5E718B;
+        width: 100%;
+        font-size: 18px;
     }
     .button-bs-nav > button{
         width: 100%;
         display: flex;
-        justify-content: center;
         gap: 10px;
         align-items: center;
         border: none;
@@ -501,12 +518,12 @@ header > .nav-div{
     }
     .dropdown-bs-menu{
         position: absolute;
-        top: 160px;
+        top: 170px;
         overflow: hidden;
         display: grid;
         background-color: white;
         width: 100%;
-        max-width: 150px;
+        max-width: 230px;
         transform-origin: 50% 0;
         transition: 400ms;
         border-radius: 0px 0px 15px 15px;
@@ -528,6 +545,7 @@ header > .nav-div{
         border: none;
         cursor: pointer;
         border-top: 1px solid rgba(227, 227, 227, 0.528);
+        text-align: center;
     }
     .dropdown-bs-menu > button:hover{
         background-color: #f3d6bb65;
