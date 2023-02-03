@@ -29,8 +29,6 @@ function App() {
   }
   if(loading){
     body.style.overflow = 'hidden'
-  } else {
-    body.style.overflow = 'visible'
   }
 
   return (
