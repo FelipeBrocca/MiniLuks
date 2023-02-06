@@ -122,6 +122,7 @@ const ProductDetail = () => {
               <button 
               className='button-detail'
               onClick={setProductToCart}
+              disabled={sizeSelected ? 'off' : 'on'}
               >Agregar al carrito</button>
               <div className='category-in-detail'>
               <p>Ver categorías:</p>
