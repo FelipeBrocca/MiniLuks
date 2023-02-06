@@ -11,7 +11,8 @@ const ProductDetail = () => {
     const params = useParams()
     const [productToDetail, setProductToDetail] = useState()
     const [valor, setValor] = useState(1)
-    const [sizeSelected, setSizeSelected] = useState('Sin especificar talle')
+    const [sizeSelected, setSizeSelected] = useState('')
+    const [errorSize, setErrorSize] = useState('')
     const {addItemToCart} = useContext(CartContext)
 
     const productView = FakeApiProducts.filter(product => product.id === parseInt(params.id))
@@ -38,7 +39,13 @@ const ProductDetail = () => {
       productToCart.price = productToDetail.price
       productToCart.quantity = valor
 
-      addItemToCart(productToCart, valor)
+      if(!sizeSelected || productToCart.size.includes('*')){
+        setErrorSize('Indique un talle válido')
+      } else {
+        setErrorSize('')
+        setSizeSelected('')
+        addItemToCart(productToCart, valor)
+      }
     })
 
     const capitalizeFirstLetter = (string) => {
@@ -122,8 +129,10 @@ const ProductDetail = () => {
               <button 
               className='button-detail'
               onClick={setProductToCart}
-              disabled={sizeSelected ? 'off' : 'on'}
               >Agregar al carrito</button>
+              {
+                errorSize ? <p style={{color: 'red'}}>{errorSize}</p> : ''
+              }
               <div className='category-in-detail'>
               <p>Ver categorías:</p>
               <Link className='categories-detail-link' to={`/productos/${productToDetail.category.toLowerCase()}`}>{productToDetail.category}</Link>
