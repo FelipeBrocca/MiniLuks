@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
-import MiniLuksLogo from '../../public/images/MiniLuks.jpeg'
+import MiniLuksLogo from '../../public/images/MiniLuks.webp'
 
 import usePopUp from '../../hooks/usePopUp';
 import '../../public/css/Header.css';
@@ -11,8 +11,17 @@ import NavHeader from './NavHeader';
 import MenuHeader from './MenuHeader';
 import { CartContext } from '../../Context/CartContext';
 import Cart from './Cart';
+import { LoadingContext } from '../../Context/LoadingContext';
+
 
 const Header = () => {
+
+  const { setLoading } = useContext(LoadingContext)
+  const handleLoading = () => {
+      setTimeout(() => {
+          setLoading(false)
+      }, 1500)
+  }
 
   const [productsInCartLength, setProductsInCartLength] = useState(0)
   const {cartItems} = useContext(CartContext)
@@ -36,7 +45,7 @@ const Header = () => {
       <div className='top-header'>
         <MenuHeader />
         <Link to='/' className='logo-a'>
-          <img alt='logo-header' src={MiniLuksLogo} />
+          <img alt='logo-header' src={MiniLuksLogo} onLoad={handleLoading} />
         </Link>
         <div className='cart-container'>
         <button 

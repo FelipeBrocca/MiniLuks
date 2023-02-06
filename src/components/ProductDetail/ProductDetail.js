@@ -45,6 +45,19 @@ const ProductDetail = () => {
       return string.charAt(0).toUpperCase() + string.slice(1)
     }
 
+    const handleStockSize = (size) => {
+      if(size.includes('*')){
+        return (
+          ''
+        )
+      } else if(sizeSelected[0] === size) {
+        setSizeSelected('Sin especificar talle')
+      } else {
+        setSizeSelected(size)
+      }
+    }
+
+
   return (
     <main className='main-detail'>
       <div className='nav-indicator'>
@@ -81,20 +94,23 @@ const ProductDetail = () => {
               <div className='bottom-bottom-detail-container'>
               <p className='detail-price'>$ {productToDetail.price}</p>
                 <div className='sizes-detail-container'>
+                  <div className='sizes'>
                   <p>Talles:</p>
                 {productToDetail?.sizes?.map((size) => {
                   return(
-                      <p 
+                      <button 
                       className={size === sizeSelected ? 'detail-sizes selected' : 'detail-sizes'}
                       key={size}
-                      onClick={() => setSizeSelected(size)}
+                      onClick={() => handleStockSize(size)}
                       id={`sizes-detail-${size}`}
                       >
                       {size}
-                      </p>
+                      </button>
                       )
                     })
                   }
+                  </div>
+                  <div><small>(Los talles que incluyen <strong>*</strong> estan fuera de stock)</small></div>
                 </div>
               <div className='quantity-container'>
                   <p>Cantidad</p>

@@ -8,7 +8,7 @@ import '../../public/css/HomeProducts.css'
 
 const HomeProducts = () => {
 
-   const scrollToTop = () => window.scrollTo({ top:0 , behavior:'smooth'})
+    const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 
     return (
         <>
@@ -19,9 +19,9 @@ const HomeProducts = () => {
                     <ul className="categories-list">
                         <Link className="categories-link" to='/productos'>Todos los productos</Link>
                         {
-                            FakeApiCategories?.map((category) =>{
+                            FakeApiCategories?.map((category) => {
                                 return (
-                                  <Link className="categories-link" to={`/productos/${category.name.toLowerCase()}`} key={category.name}>{category.name}</Link>
+                                    <Link className="categories-link" to={`/productos/${category.name.toLowerCase()}`} key={category.name}>{category.name}</Link>
                                 )
                             })
                         }
@@ -31,22 +31,26 @@ const HomeProducts = () => {
                     <div className="cards-container">
                         {
                             FakeApiProducts.map((product) => {
-                                return (
-                                   <ProductsCard
-                                   key={product.id}
-                                   id={product.id}
-                                   title={product.name}
-                                   price={product.price}
-                                   images={product.images}
-                                   category={product.category}
-                                   />
-                                )
+                                if (product.id > FakeApiProducts.length - 12) {
+                                    return (
+                                        <ProductsCard
+                                            key={product.id}
+                                            id={product.id}
+                                            title={product.name}
+                                            price={product.price}
+                                            images={product.images}
+                                            category={product.category}
+                                        >
+                                            <div className='new-product'>NUEVO</div>
+                                        </ProductsCard>
+                                    )
+                                }
                             })
                         }
                     </div>
                 </div>
-                <button 
-                onClick={scrollToTop}
+                <button
+                    onClick={scrollToTop}
                 ><Link to='/productos'>VER TODOS LOS PRODUCTOS</Link></button>
             </div>
         </>

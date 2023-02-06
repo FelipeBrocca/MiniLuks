@@ -1,6 +1,9 @@
+import slide1 from '../../public/images/slide1-1.webp'
+import slide2 from '../../public/images/slide1-2.webp'
+import slide3 from '../../public/images/slide1-3.webp'
 
 export const carouselData = [
-    {image: 'https://res.cloudinary.com/dbdlv6uob/image/upload/v1669404137/Carrusel/slide1-1_cwh7wg.webp', title:'slide1'},
-    {image: 'https://res.cloudinary.com/dbdlv6uob/image/upload/v1669404137/Carrusel/slide1-2_poyi0k.webp', title:'slide2'},
-    {image: 'https://res.cloudinary.com/dbdlv6uob/image/upload/v1669404137/Carrusel/slide1-3_ird4ql.webp', title:'slide3'}
+    {image: slide1, title:'slide1'},
+    {image: slide2, title:'slide2'},
+    {image: slide3, title:'slide3'}
 ]

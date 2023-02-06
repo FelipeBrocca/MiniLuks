@@ -5,11 +5,11 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./ProductsCard.css"
 import { Link } from 'react-router-dom'
 
-const ProductsCard = ({images, title, price, id, category}) => {
+const ProductsCard = ({images, title, price, id, category, children}) => {
   return (
     <div className='card-container'>
        <div className='top-card'>
-        <div className='new-product'>NUEVO</div>
+        {children}
           <Carousel
           showStatus={false}
           showArrows={false}

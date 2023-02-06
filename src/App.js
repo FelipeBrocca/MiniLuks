@@ -1,51 +1,37 @@
 import { Routes, Route } from 'react-router-dom';
-import React, {useState} from 'react';
+import React from 'react';
 
-import {CartProvider} from './Context/CartContext'
+import { CartProvider } from './Context/CartContext'
 
-import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer'
 import Home from './pages/Home/Home';
 import AllProducts from './pages/Store/AllProducts';
 import ProductDetail from './components/ProductDetail/ProductDetail';
 import ProductsCategory from './components/Products/ProductsCategory';
 import NotFound from './components/NotFound/NotFound';
-
+import { LoadingProvider } from './Context/LoadingContext';
+import Preloader from './components/Preloader/Preloader';
+const Header = React.lazy(() => import('./components/Header/Header'))
 
 
 function App() {
-  const [loading, setLoading] =useState(true)
-  const loader = document.getElementById('Loader2')
-  const loaderImg = document.getElementById('loader-img')
-  const body = document.getElementById('body')
-
-  if(loader){
-    setTimeout(() => {
-      loader.style.opacity = "0"
-      loader.style.height = '0px'
-      loaderImg.style.height = '0px'
-      setLoading(false)
-    }, 2000)
-  }
-  if(loading){
-    body.style.overflow = 'hidden'
-  }
 
   return (
-    !loading && (
-        <CartProvider>
-        <Header />        
-          <Routes>
-              <Route exact index element={<Home />} />
-              <Route exact path='/productos' element={<AllProducts />} />
-              <Route exact path='/productos/:category/:id' element={<ProductDetail />} />
-              <Route exact path='/productos/:category' element={<ProductsCategory />} />
-              <Route exact path='*' element={<NotFound />} />
-            </Routes>
-            <Footer />     
-        </CartProvider>
-    )
-  );
+    <LoadingProvider>
+      <Preloader />
+      <CartProvider>
+        <Header />
+        <Routes>
+          <Route exact index element={<Home />} />
+          <Route exact path='/productos' element={<AllProducts />} />
+          <Route exact path='/productos/:category/:id' element={<ProductDetail />} />
+          <Route exact path='/productos/:category' element={<ProductsCategory />} />
+          <Route exact path='*' element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </CartProvider>
+    </LoadingProvider>
+  )
 }
 
 export default App;
