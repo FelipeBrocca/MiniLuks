@@ -90,8 +90,21 @@
 .sizes-detail-container{
     display: flex;
     justify-content: flex-start;
-    gap: 10px;
+    flex-direction: column;
+    gap: 1px;
+}
+.sizes{
+    display: flex;
+    align-items: center;
+    gap: 20px;
     flex-wrap: wrap;
+}
+.nostock > small{
+    display: flex;
+    gap: 5px;
+}
+.nostock > small > strong{
+    font-size: 20px;
 }
 .sizes-detail-container > p{
     display: flex;
@@ -151,7 +164,15 @@
     gap: 30px;
     width: 90%;
 }
-
+@media (min-width: 769px) {
+    .bottom-detail-container{
+        background-color: rgba(255, 255, 255, 0.800);
+        border-radius: 10px;
+    }
+    h4{
+        background-color: rgba(255, 255, 255, 0.600);
+    }
+}
 @media (min-width: 1024px) {
     .slider{
         align-items: flex-start;

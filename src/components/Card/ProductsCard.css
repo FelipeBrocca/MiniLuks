@@ -7,7 +7,7 @@
     max-width: 250px;
     position: relative;
     min-height: 350px;
-    background-color: rgba(255, 255, 255, 0.628);
+    background-color: rgba(255, 255, 255, 0.600);
     border-radius: 5px;
 }
 
@@ -115,7 +115,7 @@
     font-weight: 500;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     .card-container{
         width: calc(35% - 20px);
         min-height: 420px;

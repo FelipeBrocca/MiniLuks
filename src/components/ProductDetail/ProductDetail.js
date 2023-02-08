@@ -43,8 +43,8 @@ const ProductDetail = () => {
         setErrorSize('Indique un talle válido')
       } else {
         setErrorSize('')
-        setSizeSelected('')
         addItemToCart(productToCart, valor)
+        setSizeSelected('')
       }
     })
 
@@ -54,16 +54,16 @@ const ProductDetail = () => {
 
     const handleStockSize = (size) => {
       if(size.includes('*')){
-        return (
-          ''
-        )
-      } else if(sizeSelected[0] === size) {
-        setSizeSelected('Sin especificar talle')
+        return('')
+      } else if(sizeSelected === size) {
+        setSizeSelected('')
       } else {
         setSizeSelected(size)
       }
     }
-
+   useEffect(() => {
+    console.log(sizeSelected);
+   }, [sizeSelected])
 
   return (
     <main className='main-detail'>
@@ -117,7 +117,7 @@ const ProductDetail = () => {
                     })
                   }
                   </div>
-                  <div><small>(Los talles que incluyen <strong>*</strong> estan fuera de stock)</small></div>
+                  <div className='nostock'><small>(Los talles que incluyen <strong>*</strong> estan fuera de stock)</small></div>
                 </div>
               <div className='quantity-container'>
                   <p>Cantidad</p>
@@ -130,9 +130,11 @@ const ProductDetail = () => {
               className='button-detail'
               onClick={setProductToCart}
               >Agregar al carrito</button>
+              <div className='size-error-container'>
               {
-                errorSize ? <p style={{color: 'red'}}>{errorSize}</p> : ''
+                errorSize ? <p style={{color: 'red', height: '40px'}}>{errorSize}</p> : <p style={{height: '40px'}}></p>
               }
+              </div>
               <div className='category-in-detail'>
               <p>Ver categorías:</p>
               <Link className='categories-detail-link' to={`/productos/${productToDetail.category.toLowerCase()}`}>{productToDetail.category}</Link>
