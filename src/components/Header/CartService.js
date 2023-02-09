@@ -5,7 +5,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 
-const Cart = ({popUpState, handlePopUp, cartItems}) => {
+const CartService = ({popUpState, handlePopUp, cartItems}) => {
 
   const total = cartItems.reduce((previous, current) => previous + current.quantity * current.price, 0)
   const [itemsForMessage, setItemsForMessage] = useState([])
@@ -86,4 +86,4 @@ const Cart = ({popUpState, handlePopUp, cartItems}) => {
   )
 }
 
-export default Cart
+export default React.memo(CartService)

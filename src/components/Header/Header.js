@@ -1,72 +1,58 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
+import '../../public/css/Header.css';
 import { Link } from 'react-router-dom';
-
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { LoadingContext } from '../../Context/LoadingContext';
 import MiniLuksLogo from '../../public/images/MiniLuks.webp'
 
-import usePopUp from '../../hooks/usePopUp';
-import '../../public/css/Header.css';
 import NavHeader from './NavHeader';
 import MenuHeader from './MenuHeader';
-import { CartContext } from '../../Context/CartContext';
-import Cart from './Cart';
-import { LoadingContext } from '../../Context/LoadingContext';
+import SearchBar from './SearchBar';
+import CartContainer from './CartContainer';
 
 
 const Header = () => {
 
+  const [scrollState, setScrollState] = useState(false);
+
   const { setLoading } = useContext(LoadingContext)
   const handleLoading = () => {
-      setTimeout(() => {
-          setLoading(false)
-      }, 1500)
+    setTimeout(() => {
+      setLoading(false)
+    }, 1500)
   }
 
-  const [productsInCartLength, setProductsInCartLength] = useState(0)
-  const {cartItems} = useContext(CartContext)
-
-  const { popUpState, backdropPopUp, handlePopUp, isClosed } = usePopUp()
-  
   useEffect(() => {
-     setProductsInCartLength(
-      cartItems.reduce((previous, current) => previous + current.quantity, 0)
-     )
-  }, [cartItems])
-
+    const handleScroll = () => {
+        if (window.scrollY >= 150) {
+            setScrollState(true)
+        } else {
+            setScrollState(false)
+        }
+    }
+    window.addEventListener('scroll', handleScroll)
+}, [])
 
 
   return (
     <>
-    <header>
-      {
-        popUpState ? backdropPopUp : ''
-      }
-      <div className='top-header'>
-        <MenuHeader />
-        <Link to='/' className='logo-a'>
-          <img alt='logo-header' src={MiniLuksLogo} onLoad={handleLoading} />
-        </Link>
-        <div className='cart-container'>
-        <button 
-        className='button-toCart'
-        onClick={handlePopUp}
-        >
-          <FontAwesomeIcon className='icon' icon={faCartShopping} />
-        </button>
-        <span>{productsInCartLength}</span>
-        <div className={`cart-display-container ${isClosed ? "closed" : ""}`}>
-          <Cart
-          popUpState={popUpState}
-          handlePopUp={handlePopUp}
-          cartItems={cartItems}
-          />
+      <header>
+        <div className={!scrollState ? 'top-header' : 'top-header scroll'}>
+          <MenuHeader />
+          <div className='logo-container'>
+            <Link to='/' className='logo-a'>
+              <img alt='logo-header' src={MiniLuksLogo} onLoad={handleLoading} className={!scrollState ? 'logo-a-img' : 'logo-a-scroll'} />
+            </Link>
+          </div>
+          <div className='searchbar-container-bs'>
+            <SearchBar />
+          </div>
+          <div className='cart-container'>
+            <CartContainer />
+          </div>
         </div>
-        </div>
-      </div>
-      <NavHeader />
-    </header>
-      </>
+        <NavHeader />
+      </header>
+    </>
   )
 }
 
