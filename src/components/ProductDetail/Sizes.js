@@ -1,28 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 
-const Sizes = ({productToDetail, sizeSelected, handleStockSize}) => {
+const Sizes = ({ size, sizeSelected, handleStockSize }) => {
 
     return (
-        <div className='sizes-detail-container'>
-            <div className='nostock'><small>(Los talles con<strong>*</strong> están fuera de stock)</small></div>
-            <div className='sizes'>
-                <p>Talles:</p>
-                {productToDetail?.sizes?.map((size) => {
-                    return (
-                        <button
-                            className={size === sizeSelected ? 'detail-sizes selected' : 'detail-sizes'}
-                            key={size}
-                            onClick={() => handleStockSize(size)}
-                            id={`sizes-detail-${size}`}
-                        >
-                            {size}
-                        </button>
-                    )
-                })
-                }
-            </div>
-        </div>
+        <button
+            className={size === sizeSelected ? 'detail-sizes selected' : 'detail-sizes'}
+            onClick={() => handleStockSize(size)}
+            id={`sizes-detail-${size}`}
+        >
+            {size}
+        </button>
     )
 }
 
