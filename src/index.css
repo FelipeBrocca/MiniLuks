@@ -64,15 +64,12 @@ a{
 }
 
 
-@media (min-width: 769px) {
-  body{
+@media (min-width: 1024px) {
+   body{
     background-image: url('./public/images/fondo-body.webp');
     background-size: cover;
     background-attachment: fixed;
   }
-}
-
-@media (min-width: 1024px) {
   main{
     max-width: 1400px;
     margin-top: 20px;

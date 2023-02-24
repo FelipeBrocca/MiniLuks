@@ -9,7 +9,7 @@ const CarouselHome = () => {
   return (
     <div className='carousel-container'>
         <Carousel
-        autoPlay={false}
+        autoPlay={true}
         interval={10000}
         infiniteLoop={true}
         showThumbs={false}
