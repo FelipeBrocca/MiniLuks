@@ -1,18 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './NotFound.css'
-import imgNotFound from '../../public/images/notfound.jpg'
+import notFoundImg from '../../public/images/notFound-img.webp'
 
-const NotFound = () => {
+const NotFound = ({prop}) => {
   return (
-    <main className='not-found-container'>
+    <div className='not-found-main'>
         <div className='text-not-found'>
-            Error 404! <br/> Ups... Parece que esta ruta no existe, volvé a la <Link to='/'>Home acá</Link>
+            Error 404! <br/> Ups... Parece que {prop} no existe, volvé a la <Link to='/'>Home acá</Link>
         </div>
-        <div className='img-not-found'>
-            <img src={imgNotFound} alt='not-found' />
-        </div>
-    </main>
+        <img src={notFoundImg} alt='not-found' /> 
+    </div>
   )
 }
 

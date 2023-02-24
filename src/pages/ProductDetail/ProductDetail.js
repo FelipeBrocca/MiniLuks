@@ -5,6 +5,7 @@ import { FakeApiProducts } from '../../Data/FakeApiProducts'
 import { CartContext } from '../../Context/CartContext';
 import Sizes from '../../components/ProductDetail/Sizes'
 import TopDetail from '../../components/ProductDetail/TopDetail'
+import NotFound from '../../components/NotFound/NotFound';
 
 const ProductDetail = () => {
 
@@ -129,7 +130,7 @@ const ProductDetail = () => {
                   </Link>
                 </div>
               </>
-              : 'Error! Este producto no existe...'
+              : <NotFound prop={'este producto'} />
           }
         </div>
       </div>

@@ -29,7 +29,7 @@ function App() {
             <Route exact path='/productos/:category/:id' element={<ProductDetail />} />
             <Route exact path='/productos/:category' element={<ProductsCategory />} />
             <Route exact path='/politica-de-cambio' element={<Policy />} />
-            <Route exact path='*' element={<NotFound />} />
+            <Route exact path='*' element={<NotFound prop={'esta ruta'} />} />
           </Routes>
         </main>
         <FooterLazy />

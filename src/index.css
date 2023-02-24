@@ -71,6 +71,7 @@ a{
     background-attachment: fixed;
   }
   main{
+    min-width: 1000px;
     max-width: 1400px;
     margin-top: 20px;
     border-radius: 5px;
