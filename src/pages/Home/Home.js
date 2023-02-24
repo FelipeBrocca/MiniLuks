@@ -6,10 +6,10 @@ import "./Home.css";
 
 const Home = () => {
   return (
-    <main className='home-main'>
+    <div className='home-main'>
       <CarouselHome />
       <HomeProducts />
-    </main>
+    </div>
   )
 }
 

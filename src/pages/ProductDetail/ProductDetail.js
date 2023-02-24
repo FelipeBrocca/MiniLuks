@@ -3,8 +3,8 @@ import { Link, useParams } from 'react-router-dom'
 import './ProductDetail.css'
 import { FakeApiProducts } from '../../Data/FakeApiProducts'
 import { CartContext } from '../../Context/CartContext';
-import Sizes from './Sizes';
-import TopDetail from './TopDetail';
+import Sizes from '../../components/ProductDetail/Sizes'
+import TopDetail from '../../components/ProductDetail/TopDetail'
 
 const ProductDetail = () => {
 
@@ -60,6 +60,9 @@ const ProductDetail = () => {
       setSizeSelected(size)
     }
   }, [sizeSelected])
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
+
 
   return (
     <>
@@ -118,7 +121,12 @@ const ProductDetail = () => {
                 </div>
                 <div className='category-in-detail'>
                   <p>Ver categorías:</p>
-                  <Link className='categories-detail-link' to={`/productos/${productToDetail.category.toLowerCase()}`}>{productToDetail.category}</Link>
+                  <Link 
+                  className='categories-detail-link' 
+                  to={`/productos/${productToDetail.category.toLowerCase()}`}
+                  onClick={scrollToTop}
+                  >{productToDetail.category}
+                  </Link>
                 </div>
               </>
               : 'Error! Este producto no existe...'

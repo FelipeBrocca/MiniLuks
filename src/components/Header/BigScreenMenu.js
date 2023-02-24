@@ -48,18 +48,11 @@ const BigScreenMenu = () => {
               }
           </div>
           </div>
-          {/* <li className='option-bs-menu'>
-            <Link
-            >CONTACTO</Link>
-        </li> */}
         <li className='option-bs-menu'>
             <Link
+            to='/politica-de-cambio'
             >POLÍTICA DE CAMBIO</Link>
         </li>
-        {/* <li className='option-bs-menu'>
-            <Link
-            >QUIÉNES SOMOS</Link>
-        </li> */}
           </ul>
 </div>
   )

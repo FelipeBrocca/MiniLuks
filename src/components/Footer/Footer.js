@@ -8,6 +8,10 @@ import { faPhone, faAt } from '@fortawesome/free-solid-svg-icons';
 import '../../public/css/Footer.css'
 
 const Footer = () => {
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
+
+
   return (
     <footer>
         <div className='footer'>
@@ -15,19 +19,22 @@ const Footer = () => {
             <h5>NAVEGACION</h5>
               <ul>
                 <li className='option-footer'>
-                    <Link to='/'>Inicio</Link>
+                    <Link 
+                    to='/'
+                    onClick={scrollToTop}
+                    >Inicio</Link>
                 </li>
                 <li className='option-footer'>
-                    <Link>Productos</Link>
+                    <Link
+                    to='/productos'
+                    onClick={scrollToTop}
+                    >Productos</Link>
                 </li>
                 <li className='option-footer'>
-                    <Link>Contacto</Link>
-                </li>
-                <li className='option-footer'>
-                    <Link>Politica de cambio</Link>
-                </li>
-                <li className='option-footer'>
-                    <Link>Quienes somos</Link>
+                    <Link
+                    to='/politica-de-cambio'
+                    onClick={scrollToTop}
+                    >Política de cambio</Link>
                 </li>
               </ul>
           </nav>

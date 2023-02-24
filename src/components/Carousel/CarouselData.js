@@ -1,6 +1,6 @@
-import slide1 from '../../public/images/slide1-1.webp'
-import slide2 from '../../public/images/slide1-2.webp'
-import slide3 from '../../public/images/slide1-3.webp'
+import slide1 from '../../public/images/1.webp'
+import slide2 from '../../public/images/2.webp'
+import slide3 from '../../public/images/3.webp'
 
 export const carouselData = [
     {image: slide1, title:'slide1'},

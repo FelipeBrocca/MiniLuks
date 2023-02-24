@@ -9,8 +9,8 @@ const CarouselHome = () => {
   return (
     <div className='carousel-container'>
         <Carousel
-        autoPlay={true}
-        interval={5000}
+        autoPlay={false}
+        interval={10000}
         infiniteLoop={true}
         showThumbs={false}
         stopOnHover={true}
@@ -20,7 +20,7 @@ const CarouselHome = () => {
            {
             carouselData?.map((slide) => {
                 return (
-                    <div key={slide.title}>
+                    <div key={slide.title} className='image-carousel-container'>
                         <img src={slide.image} alt="imgSlide" className='image-slider' />
                     </div>
                 )

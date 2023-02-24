@@ -60,7 +60,6 @@ h2{
 
 @media(min-width: 769px){
     .home-products-container{
-        background-color: rgba(255, 255, 255, 0.800);
         max-width: 1200px;
         margin: 0 auto;
         border-radius: 10px;

@@ -39,11 +39,11 @@ const SearchBar = () => {
                 onChange={handleChangeSearchbar}
             >
             </input>
-            <div className='container-searching'>
+            <div className={search ? 'container-searching' : ''}>
                 <ul>
                     {
                         search ?
-                            products.slice(0, 4).map((product) => {
+                            products.slice(0, 5).map((product) => {
                                 return (
                                     <Link
                                         key={product.id}

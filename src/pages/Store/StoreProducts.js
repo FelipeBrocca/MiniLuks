@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import ProductsCard from "../Card/ProductsCard"
+import ProductsCard from "../../components/Card/ProductsCard"
 import { FakeApiProducts } from "../../Data/FakeApiProducts";
-import { FakeApiCategories } from "../../Data/FakeApiCategories";
+import Categories from '../../components/Products/Categories';
 
 const StoreProducts = () => {
   return (
@@ -14,16 +14,7 @@ const StoreProducts = () => {
             <div className="home-products-container">
             <div className="categories-container">
                     <h3>Categorías principales</h3>
-                    <ul className="categories-list">
-                    <Link className="categories-link" to='/productos'>Todos los productos</Link>
-                        {
-                            FakeApiCategories?.map((category) =>{
-                                return (
-                                  <Link className="categories-link" to={`/productos/${category.name.toLowerCase()}`} key={category.name}>{category.name}</Link>
-                                )
-                            })
-                        }
-                    </ul>
+                    <Categories />
                 </div>
                 <div className="products-container">
                     <div className="cards-container">

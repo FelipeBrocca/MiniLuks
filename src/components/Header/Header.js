@@ -32,6 +32,8 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll)
 }, [])
 
+const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
+
 
   return (
     <>
@@ -40,7 +42,13 @@ const Header = () => {
           <MenuHeader />
           <div className='logo-container'>
             <Link to='/' className='logo-a'>
-              <img alt='logo-header' src={MiniLuksLogo} onLoad={handleLoading} className={!scrollState ? 'logo-a-img' : 'logo-a-scroll'} />
+              <img 
+              alt='logo-header' 
+              src={MiniLuksLogo} 
+              onLoad={handleLoading} 
+              className={!scrollState ? 'logo-a-img' : 'logo-a-scroll'}
+              onClick={scrollToTop}
+              />
             </Link>
           </div>
           <div className='searchbar-container-bs'>
