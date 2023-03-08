@@ -167,6 +167,10 @@
     gap: 30px;
     width: 90%;
 }
+.top-detail-skeleton{
+    min-height: 350px;
+}
+
 @media (min-width: 769px) {
     .bottom-detail-container{
         background-color: rgba(255, 255, 255, 0.800);
@@ -175,6 +179,9 @@
     h4{
         background-color: rgba(255, 255, 255, 0.600);
         border-radius: 10px;
+    }
+    .top-detail-skeleton{
+        min-height: 420px;
     }
 }
 @media (min-width: 1024px) {
