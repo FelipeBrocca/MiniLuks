@@ -331,7 +331,7 @@ header > .nav-div{
     width: 90%;
     max-width: 400px;
     background-color: white;
-    min-height: calc(100vh - (100vh - 100%));
+    height: calc(100vh - (100vh - 100%));
     translate: 0 0;
     transition: 500ms;
     display: flex;
